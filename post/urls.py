@@ -19,6 +19,6 @@ from django.urls import path, include
 
 #앱이 추가될 때 기본 path경로와 각 앱 폴더 안쪽의 url.py를 아래와 같이 등록
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('post_app.urls'))
+  path('posts', views.posts, name='posts'),
+  path('posts/<slug:slug>/', views.posts_detail, name='post-detail')
 ]
